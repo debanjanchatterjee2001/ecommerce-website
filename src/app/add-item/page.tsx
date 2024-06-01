@@ -1,3 +1,4 @@
+import AddItemButton from "@/components/AddItemButton";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 
@@ -102,9 +103,7 @@ export default function AddItemPage() {
             placeholder="Enter price of car"
             className="m-3 p-2 input input-bordered input-accent"
           />
-          <button type="submit" className="btn btn-primary m-3 p-2">
-            Add to DB
-          </button>
+          <AddItemButton className="m-3 p-2">Add to DB</AddItemButton>
         </form>
       </div>
     </>
