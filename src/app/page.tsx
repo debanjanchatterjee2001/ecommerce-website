@@ -1,14 +1,20 @@
-import Image from "next/image";
-import { title } from "process";
+import CardDisplayCard from "@/components/CarDisplayCard";
+import { prisma } from "@/lib/db/prisma";
 
 export const metadata = {
-  title: "Cars Website"
-}
+  title: "Cars Website",
+};
 
-export default function Home() {
+export default async function Home() {
+  const cars = await prisma.car.findMany({
+    orderBy: { id: "desc" },
+  });
+
   return (
-    <main>
-      
-    </main>
+    <div className="m-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {cars.map((car) => (
+        <CardDisplayCard car={car} key={car.id} />
+      ))}
+    </div>
   );
 }

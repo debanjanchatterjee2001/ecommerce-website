@@ -8,11 +8,7 @@ const config: Config = {
   ],
   plugins: [require("daisyui")],
   daisyui: {
-    themes: [
-        "winter",
-        "night",
-    ],
-    darkTheme: "night",
+    themes: ["cupcake"],
     base: true,
     styled: true, // adds class names. Not colors)
     logs: true,
