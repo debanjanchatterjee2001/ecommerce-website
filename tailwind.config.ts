@@ -9,23 +9,14 @@ const config: Config = {
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
-      {
-        mytheme: {
-          primary: "#0094ff",
-          secondary: "#0000ff",
-          accent: "#005bea",
-          neutral: "#181818",
-          "base-100": "#fffcff",
-          info: "#0055e2",
-          success: "#a9e030",
-          warning: "#bb9100",
-          error: "#ff4c76",
-          body: {
-            "background-color": "#e3e6e6",
-          },
-        },
-      },
+        "winter",
+        "night",
     ],
+    darkTheme: "night",
+    base: true,
+    styled: true, // adds class names. Not colors)
+    logs: true,
+    themeRoot: ":root",
   },
 };
 export default config;
