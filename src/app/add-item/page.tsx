@@ -40,7 +40,7 @@ export default function AddItemPage() {
   return (
     <>
       <div className="flex bg-info">
-        <h1 className="m-4 font-bold text-neutral-content text-2xl">
+        <h1 className="m-4 font-bold text-primary-content text-2xl">
           Add a Car to the database
         </h1>
       </div>
@@ -80,8 +80,13 @@ export default function AddItemPage() {
             <option>Hatchback</option>
             <option>Sedan</option>
             <option>SUV</option>
-            <option>4x4 Off-road</option>
-            <option>Luxery</option>
+            <option>Off-road SUV</option>
+            <option>Luxury</option>
+            <option>Sports Car</option>
+            <option>EV</option>
+            <option>Luxury EV</option>
+            <option>Pick-up Truck</option>
+            <option>Electric Pick-up Truck</option>
           </select>
           <textarea
             required

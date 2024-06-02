@@ -8,8 +8,7 @@ interface CardDisplayCardProps {
 }
 
 export default function CardDisplayCard({ car }: CardDisplayCardProps) {
-  const isNew =
-    Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60 * 24 * 2;
+  const isNew = Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60;
 
   return (
     <Link
@@ -31,7 +30,7 @@ export default function CardDisplayCard({ car }: CardDisplayCardProps) {
 
         <div className="card-actions justify-end">
           <div className="badge badge-outline">{car.make}</div>
-          <div className="badge badge-outline">{car.model}</div>
+          <div className="badge badge-outline">{car.category}</div>
           {isNew && <div className="badge badge-secondary">New arrival</div>}
         </div>
       </div>
