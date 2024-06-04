@@ -8,12 +8,13 @@ interface CardDisplayCardProps {
 }
 
 export default function CardDisplayCard({ car }: CardDisplayCardProps) {
-  const isNew = Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60;
+  const isNew =
+    Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60 * 12;
 
   return (
     <Link
       href={"/cars/" + car.make + "/" + car.model}
-      className="card w-96 bg-base-100 shadow-md hover:bg-base-300 hover:shadow-xl"
+      className="card w-full bg-base-200 hover:bg-base-300 hover:shadow-xl hover:scale-105 transition-all"
     >
       <figure>
         <Image
