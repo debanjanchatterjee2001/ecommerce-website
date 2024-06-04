@@ -13,8 +13,8 @@ export default function CarouselCard({ car }: CarouselCardProps) {
         <Image
           src={car.imageUrl}
           alt={car.name}
-          width={1400}
-          height={800}
+          width={2000}
+          height={1100}
           className="w-full"
         ></Image>
       </figure>
