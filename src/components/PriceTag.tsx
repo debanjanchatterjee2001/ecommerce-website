@@ -7,7 +7,7 @@ interface PriceTagProps {
 
 export default function PriceTag({ price, className }: PriceTagProps) {
   return (
-    <span className={`badge badge-accent ${className}`}>
+    <span className={`badge badge-accent shadow-md${className}`}>
       {formatPrice(price)}
     </span>
   );
