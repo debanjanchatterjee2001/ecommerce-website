@@ -14,7 +14,7 @@ export default function HeroCarousel({ cars }: HeroCarouselProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideIndex((slideIndex) => (slideIndex + 1) % heroCarouselLength);
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
