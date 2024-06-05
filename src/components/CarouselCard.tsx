@@ -17,6 +17,7 @@ export default function CarouselCard({ car }: CarouselCardProps) {
           width={2000}
           height={1100}
           className="w-full"
+          priority
         ></Image>
       </figure>
       <div className="card-body">
