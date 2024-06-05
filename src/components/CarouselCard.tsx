@@ -1,3 +1,4 @@
+"use client";
 import { Car } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,7 @@ export default function CarouselCard({ car }: CarouselCardProps) {
       <div className="card-body">
         <h2 className="card-title">{car.name}</h2>
         <div className="card-actions justify-end">
-          <p className="">Featured</p>
+          <p className="font-bold text-sm text-slate-400">Exclusive</p>
           <Link
             href={`/cars/${car.make}/${car.model}`}
             className="btn btn-primary"

@@ -10,9 +10,9 @@ async function addItem(formData: FormData) {
   "use server";
 
   const name = formData.get("name")?.toString();
-  const make = formData.get("make")?.toString();
-  const model = formData.get("model")?.toString();
-  const category = formData.get("category")?.toString();
+  const make = formData.get("make")?.toString().replaceAll(" ", "-");
+  const model = formData.get("model")?.toString().replaceAll(" ", "-");
+  const category = formData.get("category")?.toString().replaceAll(" ", "-");
   const description = formData.get("description")?.toString();
   const imageUrl = formData.get("imageUrl")?.toString();
   const price = Number(formData.get("price") || 0);
@@ -80,13 +80,13 @@ export default function AddItemPage() {
             <option>Hatchback</option>
             <option>Sedan</option>
             <option>SUV</option>
-            <option>Off-road SUV</option>
+            <option>Off-road-SUV</option>
             <option>Luxury</option>
-            <option>Sports Car</option>
+            <option>Sports-Car</option>
             <option>EV</option>
-            <option>Luxury EV</option>
-            <option>Pick-up Truck</option>
-            <option>Electric Pick-up Truck</option>
+            <option>Luxury-EV</option>
+            <option>Pick-up-Truck</option>
+            <option>Electric-Pick-up-Truck</option>
           </select>
           <textarea
             required

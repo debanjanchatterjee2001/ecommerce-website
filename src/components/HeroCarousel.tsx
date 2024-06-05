@@ -17,7 +17,7 @@ export default function HeroCarousel({ cars }: HeroCarouselProps) {
     }, 3000);
 
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
     <div className="carousel m-2 p-2 w-full gap-2">

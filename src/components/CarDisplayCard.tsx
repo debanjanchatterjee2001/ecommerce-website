@@ -2,6 +2,8 @@ import { Car } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import PriceTag from "./PriceTag";
+import CarMakeTag from "./CarMakeTag";
+import CarCategoryTag from "./CarCategoryTag";
 
 interface CardDisplayCardProps {
   car: Car;
@@ -9,7 +11,7 @@ interface CardDisplayCardProps {
 
 export default function CardDisplayCard({ car }: CardDisplayCardProps) {
   const isNew =
-    Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60 * 12;
+    Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60 * 24 * 3;
 
   return (
     <Link
@@ -25,16 +27,20 @@ export default function CardDisplayCard({ car }: CardDisplayCardProps) {
           className="h-48 object-cover"
         ></Image>
       </figure>
-      <div className="card-body">
+      <span className="card-body">
         <h2 className="card-title">{car.name}</h2>
         <PriceTag price={car.price} />
 
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">{car.make}</div>
-          <div className="badge badge-outline">{car.category}</div>
-          {isNew && <div className="badge badge-secondary">New arrival</div>}
-        </div>
-      </div>
+        <span className="card-actions justify-end">
+          <CarMakeTag className="text-neutral-800 hover:text-blue-800">
+            {car.make.replace(/[^a-zA-Z]/g, " ")}
+          </CarMakeTag>
+          <CarCategoryTag className="text-neutral-500 hover:text-blue-400">
+            {car.category.replace(/[^a-zA-Z]/g, " ")}
+          </CarCategoryTag>
+          {isNew && <span className="badge badge-secondary">New arrival</span>}
+        </span>
+      </span>
     </Link>
   );
 }
