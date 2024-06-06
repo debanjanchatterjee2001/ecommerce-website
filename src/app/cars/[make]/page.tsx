@@ -29,7 +29,7 @@ export default async function CarsByMakePage({
   if (!cars) return notFound();
   return (
     <div>
-      <h2 className="mx-4 my-2">
+      <h2 className="mx-4 my-2 text-lg">
         Showing cars from - <b>{make.replace(/[^a-zA-Z]/g, " ")}</b>
       </h2>
       <div className="m-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
