@@ -15,7 +15,7 @@ export default async function CarsByCategoryPage({
     where: { category: category },
     orderBy: { id: "desc" },
   });
-  if (!cars) return notFound();
+  if (cars.length === 0) return notFound();
   return (
     <div>
       <h2 className="mx-4 my-2 text-lg">
