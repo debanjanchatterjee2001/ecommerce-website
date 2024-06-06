@@ -23,5 +23,5 @@ export async function incrementCarQuantity(productId: string) {
     });
   }
 
-  revalidatePath("/cars/[make]/[model]");
+  revalidatePath("/cars/[make]/[model]", "page");
 }

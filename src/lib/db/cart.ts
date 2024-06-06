@@ -34,7 +34,7 @@ export async function getCart(): Promise<CarBookingCart | null> {
 
 export async function createCart(): Promise<CarBookingCart> {
   const newCart = await prisma.cart.create({ data: {} });
-  cookies().set("locacCartId", newCart.id);
+  cookies().set("locacCartId", newCart.id, { secure: true });
 
   return {
     ...newCart,
