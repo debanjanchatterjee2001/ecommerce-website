@@ -1,6 +1,5 @@
 import IndividualCarDisplay from "@/components/IndividualCarDisplay";
 import { prisma } from "@/lib/db/prisma";
-import { url } from "inspector";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";

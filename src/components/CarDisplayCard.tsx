@@ -10,8 +10,10 @@ interface CardDisplayCardProps {
 }
 
 export default function CardDisplayCard({ car }: CardDisplayCardProps) {
+  const newTagFeatureInDays = 3;
   const isNew =
-    Date.now() - new Date(car.createdAt).getTime() < 1000 * 60 * 60 * 24 * 3;
+    Date.now() - new Date(car.createdAt).getTime() <
+    1000 * 60 * 60 * 24 * newTagFeatureInDays;
 
   return (
     <Link
