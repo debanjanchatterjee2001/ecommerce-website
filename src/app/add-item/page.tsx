@@ -1,6 +1,6 @@
 import AddItemButton from "@/components/AddItemButton";
 import { prisma } from "@/lib/db/prisma";
-import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export const metadata = {
   title: "Add car - Cars Website",
@@ -33,7 +33,7 @@ async function addItem(formData: FormData) {
     data: { name, make, model, category, description, imageUrl, price },
   });
 
-  redirect("/");
+  revalidatePath("/add-item");
 }
 
 export default function AddItemPage() {
