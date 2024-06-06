@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Car {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
   category    String
   description String
   imageUrl    String
@@ -16,8 +16,29 @@ model Car {
   model       String
   name        String
   price       BigInt
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  CartItem    CartItem[]
 
   @@map("cars")
+}
+
+model Cart {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  items     CartItem[]
+
+  @@map("carts")
+}
+
+model CartItem {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  productId String @db.ObjectId
+  product   Car    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+  cartId    String @db.ObjectId
+  cart      Cart   @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  @@map("cartitems")
 }
