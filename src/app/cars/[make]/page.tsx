@@ -2,7 +2,6 @@ import CardDisplayCard from "@/components/CarDisplayCard";
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { cache } from "react";
 
 interface CarsByMakePageProps {
   params: {
@@ -29,10 +28,15 @@ export default async function CarsByMakePage({
   });
   if (!cars) return notFound();
   return (
-    <div className="m-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {cars.map((car) => (
-        <CardDisplayCard car={car} key={car.id} />
-      ))}
+    <div>
+      <h2 className="mx-4 my-2">
+        Showing cars from - <b>{make.replace(/[^a-zA-Z]/g, " ")}</b>
+      </h2>
+      <div className="m-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cars.map((car) => (
+          <CardDisplayCard car={car} key={car.id} />
+        ))}
+      </div>
     </div>
   );
 }
