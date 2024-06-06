@@ -1,4 +1,4 @@
-import IndividualCarDisplay from "@/components/IndividualCarDisplay";
+import IndividualCarDisplay from "./IndividualCarDisplay";
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
