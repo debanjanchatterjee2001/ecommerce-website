@@ -4,3 +4,11 @@ export function formatPrice(price: bigint) {
     currency: "USD",
   });
 }
+
+export function formatPriceCartDropdown(price: number) {
+  return (price * 1000).toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    notation: "compact",
+  });
+}

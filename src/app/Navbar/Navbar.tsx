@@ -9,7 +9,10 @@ export default async function Navbar() {
   const cart = await getCart();
   return (
     <>
-      <div className="mt-2 navbar bg-base-100">
+      <div
+        className="py-4 mb-3 navbar fixed  
+                w-full top-0 left-0 bg-base-100 z-30"
+      >
         <div className="join-horizontal flex-1">
           <Link href="/" className="btn btn-ghost text-2xl font-bold">
             <Image
@@ -27,7 +30,7 @@ export default async function Navbar() {
           <CartButton cart={cart} />
         </div>
       </div>
-      <hr />
+      <div className="divider"></div>
     </>
   );
 }

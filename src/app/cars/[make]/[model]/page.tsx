@@ -22,7 +22,7 @@ export async function generateMetadata({
   const car = await getCar(model);
 
   return {
-    title: car.name,
+    title: car.name + " - Roadio",
     description: car.description,
     openGraph: {
       images: [{ url: car.imageUrl }],

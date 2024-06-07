@@ -1,7 +1,7 @@
 "use client";
 
 import { CarBookingCart } from "@/lib/db/cart";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatPriceCartDropdown } from "@/lib/format";
 import Link from "next/link";
 
 interface CartButtonProps {
@@ -35,7 +35,7 @@ export default function CartButton({ cart }: CartButtonProps) {
             />
           </svg>
           <span
-            className={`badge badge-sm indicator-item ${!cart && "hidden"}`}
+            className={`badge badge-sm indicator-item ${(!cart || cart.size === 0) && "hidden"}`}
           >
             {cart?.size}
           </span>
@@ -46,9 +46,11 @@ export default function CartButton({ cart }: CartButtonProps) {
         className="mt-3 z-30 card card-compact dropdown-content w-52 bg-base-100 shadow"
       >
         <div className="card-body">
-          <span className="font-bold text-lg">{cart?.size || 0} Cars</span>
+          <span className="font-bold text-lg">
+            {cart?.size || 0} Cars in Cart
+          </span>
           <span className="text-info">
-            Subtotal: {formatPrice(BigInt(cart?.subtotal || 0))}
+            Subtotal: {formatPriceCartDropdown(cart?.subtotal || 0)}
           </span>
           <div className="card-actions">
             <Link

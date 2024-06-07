@@ -77,16 +77,18 @@ export default function AddItemPage() {
             <option disabled selected>
               Pick your car category
             </option>
-            <option>Hatchback</option>
-            <option>Sedan</option>
-            <option>SUV</option>
-            <option>Off-road-SUV</option>
-            <option>Luxury</option>
-            <option>Sports-Car</option>
-            <option>EV</option>
-            <option>Luxury-EV</option>
-            <option>Pick-up-Truck</option>
-            <option>Electric-Pick-up-Truck</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Off-road SUV">Off-road SUV</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Sports-Car">Sports Car</option>
+            <option value="EV">EV</option>
+            <option value="Luxury-EV">Luxury EV</option>
+            <option value="Pick-up-Truck">Pick-up Truck</option>
+            <option value="Electric-Pick-up-Truck">
+              Electric Pick-up Truck
+            </option>
           </select>
           <textarea
             required
