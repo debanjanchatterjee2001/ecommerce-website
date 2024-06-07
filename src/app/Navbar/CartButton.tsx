@@ -47,7 +47,7 @@ export default function CartButton({ cart }: CartButtonProps) {
       >
         <div className="card-body">
           <span className="font-bold text-lg">
-            {cart?.size || 0} Cars in Cart
+            {cart?.size || 0} Car{(cart?.size || 0) > 1 && "s"} in Cart
           </span>
           <span className="text-info">
             Subtotal: {formatPriceCartDropdown(cart?.subtotal || 0)}
