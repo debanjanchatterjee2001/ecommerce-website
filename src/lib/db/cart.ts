@@ -11,6 +11,10 @@ export type CarBookingCart = CartWithCars & {
   subtotal: number;
 };
 
+export type CartItemWithCar = Prisma.CartItemGetPayload<{
+  include: { product: true };
+}>;
+
 export async function getCart(): Promise<CarBookingCart | null> {
   const locacCartId = cookies().get("locacCartId")?.value;
   const cart = locacCartId

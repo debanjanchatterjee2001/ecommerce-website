@@ -10,5 +10,6 @@ export function formatPriceCartDropdown(price: number) {
     style: "currency",
     currency: "USD",
     notation: "compact",
+    maximumFractionDigits: 2,
   });
 }
