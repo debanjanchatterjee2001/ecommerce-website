@@ -1,10 +1,21 @@
 import CardDisplayCard from "@/components/CarDisplayCard";
 import { prisma } from "@/lib/db/prisma";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 interface CarsByCategoryPageProps {
   params: {
     category: string;
+  };
+}
+
+export async function generateMetadata({
+  params: { category },
+}: CarsByCategoryPageProps): Promise<Metadata> {
+  const car = await prisma.car.findFirst({ where: { category: category } });
+  if (!car) return notFound();
+  return {
+    title: category + " - Roadio",
   };
 }
 

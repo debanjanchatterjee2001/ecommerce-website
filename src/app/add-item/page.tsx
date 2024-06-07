@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db/prisma";
 import { revalidatePath } from "next/cache";
 
 export const metadata = {
-  title: "Add car - Cars Website",
+  title: "Add car - Roadio",
 };
 
 async function addItem(formData: FormData) {
@@ -39,7 +39,7 @@ async function addItem(formData: FormData) {
 export default function AddItemPage() {
   return (
     <>
-      <div className="flex bg-info">
+      <div className="px-4 flex rounded-xl bg-info">
         <h1 className="m-4 font-bold text-primary-content text-2xl">
           Add a Car to the database
         </h1>

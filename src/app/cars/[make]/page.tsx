@@ -15,7 +15,7 @@ export async function generateMetadata({
   const car = await prisma.car.findFirst({ where: { make: make } });
   if (!car) return notFound();
   return {
-    title: make,
+    title: make + " - Roadio",
   };
 }
 

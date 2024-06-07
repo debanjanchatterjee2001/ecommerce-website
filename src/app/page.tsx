@@ -1,9 +1,10 @@
 import CardDisplayCard from "@/components/CarDisplayCard";
 import HeroCarousel from "@/components/HeroCarousel";
 import { prisma } from "@/lib/db/prisma";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Cars Website",
+export const metadata: Metadata = {
+  title: "Roadio",
 };
 
 export default async function Home() {
