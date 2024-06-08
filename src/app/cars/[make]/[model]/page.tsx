@@ -1,8 +1,10 @@
+import CardsSortedByMake from "@/components/CardsSortedByMake";
 import IndividualCarDisplay from "./IndividualCarDisplay";
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import CardsSortedByCategory from "@/components/CardsSortedByCategory";
 
 interface IndividualCarPageProps {
   params: {
@@ -34,5 +36,21 @@ export default async function IndividualCarPage({
   params: { model },
 }: IndividualCarPageProps) {
   const car = await getCar(model);
-  return <IndividualCarDisplay car={car} />;
+  const cars = await prisma.car.findMany({
+    where: { make: car.make },
+  });
+  const carsCategory = await prisma.car.findMany({
+    where: { category: car.category },
+  });
+  return (
+    <>
+      <IndividualCarDisplay car={car} />
+      <CardsSortedByMake cars={cars} make={car.make} model={car.model} />
+      <CardsSortedByCategory
+        cars={carsCategory}
+        category={car.category}
+        model={car.model}
+      />
+    </>
+  );
 }
