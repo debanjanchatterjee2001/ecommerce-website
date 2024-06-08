@@ -33,10 +33,10 @@ export default function IndividualCarDisplay({
         />
         <div className="flex flex-row-reverse gap-4">
           <CarCategoryTag className="text-neutral-500 hover:text-blue-400">
-            {car.category}
+            {car.category.replace(/[^a-zA-Z]/g, " ")}
           </CarCategoryTag>
           <CarMakeTag className="text-neutral-800 hover:text-blue-800">
-            {car.make}
+            {car.make.replace(/[^a-zA-Z]/g, " ")}
           </CarMakeTag>
         </div>
       </div>
