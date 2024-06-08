@@ -21,7 +21,7 @@ export default function CardsSortedByMake({
         </h2>
         <Link
           href={"/" + category}
-          className="btn btn-outline rounded-3xl float-end"
+          className="btn btn-outline btn-xs sm:btn-sm rounded-2xl float-end"
         >
           View all
         </Link>
@@ -33,22 +33,24 @@ export default function CardsSortedByMake({
               className={`inline-block py-5 px-3 ${car.model === model && "hidden"}`}
               key={car.id}
             >
-              <div className="card w-64 max-h-64 bg-base-200 hover:bg-base-300 hover:shadow-xl hover:scale-105 transition-all">
+              <div className="card w-54 min-h-60 sm:w-72 sm:max-h-64 bg-base-200 hover:bg-base-300 hover:shadow-xl hover:scale-105 transition-all">
                 <figure>
                   <Image
                     src={car.imageUrl}
                     alt={car.name}
                     width={300}
                     height={300}
-                    className="h-32 object-cover"
+                    className="h-16 object-cover sm:h-32"
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">{car.name}</h2>
-                  <div className="card-actions justify-end">
+                  <h2 className="card-title text-xs justify-center sm:font-bold sm:text-lg sm:justify-start">
+                    {car.name}
+                  </h2>
+                  <div className="card-actions justify-center sm:justify-end">
                     <Link
                       href={"/cars/" + car.make + "/" + car.model}
-                      className="btn btn-accent btn-sm"
+                      className="btn btn-accent btn-xs sm:btn-sm"
                     >
                       View
                     </Link>
