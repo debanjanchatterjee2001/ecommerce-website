@@ -42,20 +42,28 @@ export default function UserMenuButton({ user }: UserMenuButtonProps) {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+        className="menu menu-sm dropdown-content m-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3"
       >
-        <li>
-          <Link href={"/profile"} className="justify-between">
-            Profile
-          </Link>
-        </li>
-        <li>
-          {user ? (
-            <LogoutLink className="justify-between">Log out</LogoutLink>
-          ) : (
-            <LoginLink className="justify-between">Log in</LoginLink>
-          )}
-        </li>
+        {user ? (
+          <>
+            <li>
+              <Link href={"/profile"} className="btn btn-ghost justify-between">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <LogoutLink className="btn btn-ghost bg-accent text-base-100 justify-between">
+                Log out
+              </LogoutLink>
+            </li>
+          </>
+        ) : (
+          <li>
+            <LoginLink className="btn btn-ghost bg-accent text-base-100 justify-between">
+              Log in
+            </LoginLink>
+          </li>
+        )}
       </ul>
     </div>
   );
