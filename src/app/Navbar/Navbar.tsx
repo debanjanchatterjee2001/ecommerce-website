@@ -1,12 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
-import animatedLogo from "@/assets/animated-logo.gif";
 import SearchForm from "./SearchForm";
 import CartButton from "./CartButton";
 import { getCart } from "@/lib/db/cart";
 import HomeButton from "./HomeButton";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import UserMenuButton from "./UserMenuButton";
 
 export default async function Navbar() {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
   const cart = await getCart();
   return (
     <>
@@ -18,6 +19,7 @@ export default async function Navbar() {
         <div className="flex-none gap-2">
           <SearchForm />
           <CartButton cart={cart} />
+          <UserMenuButton user={user} />
         </div>
       </div>
       <div className="divider"></div>

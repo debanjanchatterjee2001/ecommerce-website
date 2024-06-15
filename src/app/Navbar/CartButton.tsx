@@ -1,7 +1,7 @@
 "use client";
 
 import { CarBookingCart } from "@/lib/db/cart";
-import { formatPrice, formatPriceCartDropdown } from "@/lib/format";
+import { formatPriceCartDropdown } from "@/lib/format";
 import Link from "next/link";
 
 interface CartButtonProps {

@@ -49,12 +49,16 @@ export default async function CartPage() {
       {cart?.items.length !== 0 && (
         <>
           <CheckoutSection cart={cart} key={cart?.id} />
-          <CardsSortedByMake cars={carsByMake} make={make1} model={model1} />
-          <CardsSortedByCategory
-            cars={carsByCategory}
-            category={category1}
-            model={model1}
-          />
+          {carsByMake && (
+            <CardsSortedByMake cars={carsByMake} make={make1} model={model1} />
+          )}
+          {carsByCategory && (
+            <CardsSortedByCategory
+              cars={carsByCategory}
+              category={category1}
+              model={model1}
+            />
+          )}
         </>
       )}
     </div>
