@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
-import CardsGrid from "./CardsGrid";
+import CardsGrid from "../../components/CardsGrid";
 
 export default async function CarsPage() {
   const cars = await prisma.car.findMany({

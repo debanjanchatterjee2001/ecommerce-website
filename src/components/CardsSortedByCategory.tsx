@@ -20,7 +20,7 @@ export default function CardsSortedByMake({
           More cars of category - <b>{category.replace(/[^a-zA-Z]/g, " ")}</b>
         </h2>
         <Link
-          href={"/" + category}
+          href={"/cars/" + category}
           className="btn btn-outline btn-xs sm:btn-sm rounded-2xl float-end"
         >
           View all
@@ -49,7 +49,7 @@ export default function CardsSortedByMake({
                   </h2>
                   <div className="card-actions justify-center sm:justify-end">
                     <Link
-                      href={"/cars/" + car.make + "/" + car.model}
+                      href={"/car/" + car.make + "/" + car.model}
                       className="btn btn-accent btn-xs sm:btn-sm"
                     >
                       View

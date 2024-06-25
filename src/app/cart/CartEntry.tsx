@@ -38,7 +38,7 @@ export default function CartEntry({
         />
         <div>
           <Link
-            href={"/cars/" + product.make + "/" + product.model}
+            href={"/car/" + product.make + "/" + product.model}
             className="my-4 font-bold"
           >
             {product.name}

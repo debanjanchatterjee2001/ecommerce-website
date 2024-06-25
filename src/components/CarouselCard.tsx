@@ -25,7 +25,7 @@ export default function CarouselCard({ car }: CarouselCardProps) {
         <div className="card-actions justify-end">
           <p className="font-bold text-sm text-slate-400">Exclusive</p>
           <Link
-            href={`/cars/${car.make}/${car.model}`}
+            href={`/car/${car.make}/${car.model}`}
             className="btn btn-primary"
           >
             Check it out

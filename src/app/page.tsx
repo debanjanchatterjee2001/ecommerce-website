@@ -2,7 +2,7 @@ import CardDisplayCard from "@/components/CarDisplayCard";
 import HeroCarousel from "@/components/HeroCarousel";
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
-import CardsGrid from "./cars/CardsGrid";
+import CardsGrid from "@/components/CardsGrid";
 
 export const metadata: Metadata = {
   title: "Roadio",

@@ -17,7 +17,7 @@ export default function CardDisplayCard({ car }: CardDisplayCardProps) {
 
   return (
     <Link
-      href={"/cars/" + car.make + "/" + car.model}
+      href={"/car/" + car.make + "/" + car.model}
       className="card w-full bg-base-200 hover:bg-base-300 hover:shadow-xl hover:scale-105 transition-all"
     >
       <figure>

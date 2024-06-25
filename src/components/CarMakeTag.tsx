@@ -19,7 +19,7 @@ export default function CarMakeTag({
         onClick={(e) => {
           e.preventDefault();
           window.location.href =
-            "/cars/" + children?.toString().replaceAll(" ", "-");
+            "/car/" + children?.toString().replaceAll(" ", "-");
         }}
         className={`badge badge-outline hover:scale-105 ${className}`}
       >

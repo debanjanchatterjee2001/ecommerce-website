@@ -1,10 +1,10 @@
 import { Car } from "@prisma/client";
 import Image from "next/image";
-import PriceTag from "../../../../components/PriceTag";
-import CarMakeTag from "../../../../components/CarMakeTag";
-import CarCategoryTag from "../../../../components/CarCategoryTag";
-import BookCarButton from "@/app/cars/[make]/[model]/BookCarButton";
-import { incrementCarQuantity } from "@/app/cars/[make]/[model]/actions";
+import PriceTag from "@/components/PriceTag";
+import CarMakeTag from "@/components/CarMakeTag";
+import CarCategoryTag from "@/components/CarCategoryTag";
+import BookCarButton from "@/components/BookCarButton";
+import { incrementCarQuantity } from "./actions";
 
 interface IndividualCarDisplayProps {
   car: Car;
