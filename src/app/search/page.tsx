@@ -1,8 +1,18 @@
 import CardsGrid from "@/components/CardsGrid";
 import { prisma } from "@/lib/db/prisma";
+import { Metadata } from "next";
+import { title } from "process";
 
 interface SearchPageParams {
   searchParams: { query: string };
+}
+
+export function generateMetadata({
+  searchParams: { query },
+}: SearchPageParams): Metadata {
+  return {
+    title: `Search: ${query} - Roadio`,
+  };
 }
 
 export default async function SearchPage({
