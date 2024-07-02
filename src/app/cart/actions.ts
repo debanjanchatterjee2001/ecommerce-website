@@ -10,15 +10,27 @@ export async function setCarQuantity(productId: string, quantity: number) {
 
   if (quantity === 0) {
     if (carInCart) {
-      await prisma.cartItem.delete({
-        where: { id: carInCart.id },
+      await prisma.cart.update({
+        where: { id: cart.id },
+        data: {
+          items: {
+            delete: { id: carInCart.id },
+          },
+        },
       });
     }
   } else {
     if (carInCart) {
-      await prisma.cartItem.update({
-        where: { id: carInCart.id },
-        data: { quantity },
+      await prisma.cart.update({
+        where: { id: cart.id },
+        data: {
+          items: {
+            update: {
+              where: { id: carInCart.id },
+              data: { quantity },
+            },
+          },
+        },
       });
     }
   }
